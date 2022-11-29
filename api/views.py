@@ -1,9 +1,13 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from api.models import Students
-from api.serializers import StudentSerializers
+from api.models import LabDress, Cycle
+from api.serializers import DressSerializers, CycleSerializers
 # Create your views here.
 
-class StudentViewSet(viewsets.ModelViewSet):
-    queryset = Students.objects.all()
-    serializer_class = StudentSerializers
+class DressViewSet(viewsets.ModelViewSet):
+    queryset = LabDress.objects.all()
+    serializer_class = DressSerializers
+
+class CycleViewSet(viewsets.ModelViewSet):
+    queryset = Cycle.objects.all()
+    serializer_class = CycleSerializers
